@@ -1,2 +1,6 @@
 # IT
-A collection of notes and write-ups for my IT coursework at PICTDA, covering topics like networking models, operating systems, and system architecture — mostly me working through concepts in my own words to actually understand them.
+
+Notes and assignments for my Software Development coursework
+
+## Contents
+- `system_architechure.md` — OSI vs TCP/IP models, and the full path from a GUI click down to the kernel and back
