@@ -7,23 +7,23 @@ cart = []
 def getNonEmpty(prompt):
 	while True:
 		value = input(prompt).strip()
-		if value:
+		if value and any(char.isalnum() for char in value):
 			return value
 		print("Product name cannot be empty. Please try again.")
 
 def addProduct():
 	product = getNonEmpty("Enter Product Name: ")
-	cart.append(product)
+	cart.append(product.lower())
 	print("Product Added Successfully.")
 
 def removeProduct():
 	if not cart:
 		print("Cart is empty. Nothing to remove.")
 		return
-	product = input("Enter product name to remove: ").strip()
+	product = input("Enter product name to remove: ").strip().lower()
 	if product in cart:
 		cart.remove(product)
-		print("Priduct removed successfully.")
+		print("Product removed successfully.")
 	else:
 		print("Product not found in cart.")
 
