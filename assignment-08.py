@@ -8,9 +8,9 @@ students = []
 def getNonEmpty(prompt):
 	while True:
 		value = input(prompt).strip()
-		if value:
+		if value and value.replace(" ", "").isalpha():
 			return value
-		print("Name cannot be empty. Please try again.")
+		print("Name must contain letters only and cannot be enpty.")
 
 def addStudent():
 	name = getNonEmpty("Enter Students Name: ")
@@ -25,8 +25,10 @@ def removeStudent():
 		print("No students to remove.")
 		return
 	name = input("Enter students name to remove: ").strip()
-	if name in students:
-		students.remove(name)
+	nameLower = name.lower()
+	matchingStudents = [s for s in students if s.lower() == nameLower]
+	if matchingStudents:
+		students.remove(matchingStudents[0])
 		print("Student removed successsfully.")
 	else:
 		print("Student not found.")
@@ -51,7 +53,7 @@ while True:
 	print("2. Remove Student")
 	print("3. View Students")
 	print("4. Count Students")
-	print("5. Exit")
+	print("5. Exit\n")
 
 
 	choice = input("Choose an option: ").strip()
@@ -68,4 +70,4 @@ while True:
 		print("Goodbye.")
 		break
 	else:
-		print("Invalid option.")
+		print("Invalid option. Please enter a number between 1-5.")
