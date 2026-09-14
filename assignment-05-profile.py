@@ -2,8 +2,22 @@
 Assignment 5: Student Result Checker
 """
 
-name = input("Enter Name: ")
-score = float(input("Enter Score: "))
+name = input("Enter Name: ").strip()
+while name == "" or not name.replace(" ", "").isalpha():
+	print("Name cannot be empty and must be in alphabets.")
+	name = input("Enter Name: ").strip()
+scoreInput = input("Enter Score: ")
+while True:
+	try:
+		score = float(scoreInput)
+		if 0 <= score <= 100:
+			break
+		else:
+			print("Score must be between 0 and 100.")
+			scoreInput = input("Enter Score: ")
+	except ValueError:
+		print("Invalid input. Please enter a number.")
+		scoreInput = input("Enter Score: ")
 
 if 70 <= score <= 100:
 	remark = "Excellent"
