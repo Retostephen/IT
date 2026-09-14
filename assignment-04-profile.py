@@ -3,8 +3,22 @@ Assignment 4; Simple Calculator
 Build a calculator that can perform addition, subtraction, multiplication, division, modulus, power.
 """
 
-num1 = float(input("Enter first number: "))
-num2 = float(input("Enter second number: "))
+firstInput = input("Enter first number: ")
+while True:
+	try:
+		num1 = float(firstInput)
+		break
+	except ValueError:
+		print("Invalid input. PLease enter a number.")
+		firstInput = input("Enter first Number: ")
+secondInput = (input("Enter second number: "))
+while True:
+	try:
+		num2 = float(secondInput)
+		break
+	except ValueError:
+		print("Invalid input. Please enter a number.")
+		secondInput = input("Enter second Number: ")
 
 addition = num1 + num2
 subtraction = num1 - num2
