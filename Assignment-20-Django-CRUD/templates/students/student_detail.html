@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}{{ student.full_name }}{% endblock %}
+{% block content %}
+<div class="card shadow-sm">
+    <div class="card-body">
+        <h3 class="card-title">{{ student.full_name }}</h3>
+        <p><strong>Email:</strong> {{ student.email }}</p>
+        <p><strong>Department:</strong> {{ student.department }}</p>
+        <p><strong>Level:</strong> {{ student.get_level_display }}</p>
+        <p><strong>Phone:</strong> {{ student.phone_number|default:"-" }}</p>
+        <p><strong>Added:</strong> {{ student.created_at|date:"d M Y, H:i" }}</p>
+        <a href="{% url 'student_edit' student.pk %}" class="btn btn-warning">Edit</a>
+        <a href="{% url 'dashboard' %}" class="btn btn-secondary">Back</a>
+    </div>
+</div>
+{% endblock %}
