@@ -1,0 +1,12 @@
+{
+    "1234567890": {
+        "name": "Test User",
+        "pin": "1234",
+        "balance": 50000
+    },
+    "2859946435": {
+        "name": "reto stephen gyang",
+        "pin": "2001",
+        "balance": 50000.0
+    }
+}
